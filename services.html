@@ -220,48 +220,35 @@ footer .right {
 
 
 @media (max-width: 768px) {
-  .pricing-table table,
-  .pricing-table thead,
-  .pricing-table tbody,
-  .pricing-table th,
-  .pricing-table td,
-  .pricing-table tr {
-    display: block;
+  /* Make sure table fits screen */
+  .pricing-table table {
     width: 100%;
-    object-fit: scale-down;
-    overflow-x: auto;
+    table-layout: fixed; /* shrink columns proportionally */
+    border-collapse: collapse;
   }
 
-  .pricing-table thead {
-    display: none; /* hide headers on mobile */
-  }
-
-  .pricing-table tr {
-    margin-bottom: 1.5rem;
-    border: 1px solid white;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    background-color: #88CCF1; /* optional, matches your theme */
-  }
-
+  /* Table headers and cells */
+  .pricing-table th,
   .pricing-table td {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.5rem 0;
-    border: none;
+    font-size: 1rem;
+    padding: 0.5rem;
+    word-wrap: break-word; /* prevent overflow */
   }
 
-  .pricing-table td::before {
-    content: attr(data-label);
-    font-weight: bold;
-    flex-basis: 50%;
-    text-align: left;
+  /* Optional: adjust small descriptions */
+  .plan-description{
+    font-size: 0.9rem;
+  }
+
+  .plan-description-small {
+    font-size: 0.7rem;
   }
 
   .end-message {
     font-size: 0.9rem;
   }
 }
+
 
   </style>
 </head>
@@ -393,5 +380,3 @@ footer .right {
   </script>
 </body>
 </html>
-
-
