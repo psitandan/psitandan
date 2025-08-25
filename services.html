@@ -126,8 +126,8 @@
     .pricing-table td {
       font-size: 1.4rem;
       padding: 1rem;
-      border-bottom: 0.05rem solid rgba(255, 255, 255, 0.3);
-      border-top: 0.05rem solid rgba(255, 255, 255, 0.3);
+      border-bottom: 0.05rem solid white;
+      border-top: 0.05rem solid white;
     }
 
     .pricing-table th {
@@ -217,6 +217,50 @@ footer .right {
         display: flex;
       }
     }
+
+
+@media (max-width: 768px) {
+  .pricing-table table,
+  .pricing-table thead,
+  .pricing-table tbody,
+  .pricing-table th,
+  .pricing-table td,
+  .pricing-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  .pricing-table thead {
+    display: none; /* hide headers on mobile */
+  }
+
+  .pricing-table tr {
+    margin-bottom: 1.5rem;
+    border: 1px solid white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background-color: #88CCF1; /* optional, matches your theme */
+  }
+
+  .pricing-table td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border: none;
+  }
+
+  .pricing-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    flex-basis: 50%;
+    text-align: left;
+  }
+
+  .end-message {
+    font-size: 0.9rem;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -270,9 +314,9 @@ footer .right {
                 
               </span>
             </td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>$150</td>
+            <td data-label="Sesión de 1 hora">N/A</td>
+            <td data-label="Sesión de 45 minutos">N/A</td>
+            <td data-label="Sesión de 30 minutos">$150</td>
           </tr>
           <tr>
             <td class="plan-label">
@@ -284,9 +328,9 @@ footer .right {
                 Debe agendarse con 2 días hábiles de anticipación
               </span>
             </td>
-            <td>$400</td>
-            <td>$300</td>
-            <td>$200</td>
+            <td data-label="Sesión de 1 hora">$400</td>
+            <td data-label="Sesión de 45 minutos">$300</td>
+            <td data-label="Sesión de 30 minutos">$200</td>
           </tr>
           <tr>
             <td class="plan-label">
@@ -300,9 +344,9 @@ footer .right {
               </span>
 
             </td>
-            <td>$420</td>
-            <td>$320</td>
-            <td>$220</td>
+            <td data-label="Sesión de 1 hora">$420</td>
+            <td data-label="Sesión de 45 minutos">$320</td>
+            <td data-label="Sesión de 30 minutos">$220</td>
           </tr>
           <tr>
             <td class="plan-label">
@@ -314,9 +358,9 @@ footer .right {
                 Cita el mismo día o al día siguiente
               </span>
             </td>
-            <td>$450</td>
-            <td>$350</td>
-            <td>$250</td>
+            <td data-label="Sesión de 1 hora">$450</td>
+            <td data-label="Sesión de 45 minutos">$350</td>
+            <td data-label="Sesión de 30 minutos">$250</td>
           </tr>
           <tr>
             <td colspan="4"><p class="end-message">Para confirmar la cita, el pago debe hacerse mediante transferencia bancaria un día antes, 
