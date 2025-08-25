@@ -169,35 +169,43 @@ footer .right {
 }
 
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      nav ul {
-        display: none;
-        flex-direction: column;
-        background-color: #3a434b;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 60%;
-        padding: 1rem;
-      }
+     @media (max-width: 768px) {
 
-      nav ul.active {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: flex;
-      }
-
-      .boxes {
+            .boxes {
         display: grid;
         grid-template-columns: repeat(1, minmax(20vmin, 50vmin));
         gap: 1rem;        /* spacing between squares */
         justify-content: center;
         margin: auto;
               }
-    }
+
+     }
+
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #3a434b;
+    position: fixed;   /* fixed so it overlays content */
+    top: 80px;         /* just below navbar */
+    right: 0;
+    width: 60%;
+    padding: 1rem;
+    z-index: 2000;     /* on top of everything */
+    border-radius: 0 0 0.5rem 0.5rem; /* optional, nicer look */
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+
   </style>
 </head>
 <body>
