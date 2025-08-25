@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Offside&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  <title>Daniela Flores | Orientación Psicológica y Tanatológica</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-width: 100%;
+      font-family: 'Quicksand', sans-serif;
+      background-color: #fff;
+      color: #333;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-size: 1rem;
+    }
+
+    /* Navbar */
+    nav {
+      min-height: 5rem;
+      background-color: #424C55;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      display: flex;
+      align-items: center;
+      color: #fff;
+      position: relative;
+    }
+
+    /* Brain icon */
+    .logo img.brain {
+      max-height: 5rem;
+      width: auto;
+    }
+
+    /* Text logo */
+    .logo img.name {
+      max-height: 7rem;
+      width: auto;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav ul li a {
+      font-family: 'Smooch Sans';
+      display: block;
+      padding: 0.6rem 1rem;
+      color: white;
+      text-decoration: none;
+      font-size: 1.5rem;
+      transition: background-color 0.3s, color 0.3s;
+      border-radius: 0.3rem;
+    }
+
+    nav ul li a:hover {
+      background-color: white;
+      color: black;
+    }
+
+    /* Mobile Menu Toggle */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 0.2rem;
+      width: 1.6rem;
+      background: #fff;
+      margin: 0.3rem 0;
+      border-radius: 0.2rem;
+    }
+
+    /* Container holding both boxes */
+    .pricing-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem 5%;
+    }
+
+    /* Left big box */
+    .pricing-table {
+  flex: 1;
+  background-color: #88CCF1;
+  padding: 1.5rem;
+  border-radius: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+    }
+
+    .pricing-table table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    .pricing-table th,
+    .pricing-table td {
+      font-size: 1.4rem;
+      padding: 1rem;
+      border-bottom: 0.05rem solid rgba(255, 255, 255, 0.3);
+      border-top: 0.05rem solid rgba(255, 255, 255, 0.3);
+    }
+
+    .pricing-table th {
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+    .plan-label {
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .plan-description {
+      font-size: 1.2rem;
+      font-weight: normal;
+      color: #222;
+    }
+
+    .plan-description-small{
+      font-size: 1rem;
+      font-weight: normal;
+      color: #222;
+    }
+
+
+    /* Mobile responsive */
+    @media (max-width: 56.25rem) { /* 900px */
+      .pricing-wrapper {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .pricing-table, 
+      .highlight-box {
+        min-width: 100%;
+      }
+    }
+
+    .end-message{
+      font-size: 1rem;
+    }
+
+/* Footer */
+footer {
+  min-height: 80px;
+  margin-top: auto;
+  background-color: #424C55;
+  color: white;
+  font-family: 'Quicksand';
+  font-size: 0.9rem;
+
+  display: flex;
+  align-items: center;   /* vertically centers row */
+  padding: 0 1.5rem;     /* side padding */
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between; /* pushes text left/right */
+  align-items: center;
+  width: 100%; /* makes row span the full footer width */
+}
+
+footer .left,
+footer .right {
+  margin: 0;
+}
+
+    /* Responsive */
+    @media (max-width: 48rem) { /* 768px */
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #3a434b;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 60%;
+        padding: 1rem;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">
+      <img class="brain" src="Brain.png" alt="Logo">
+      <img class="name" src="Logo.png" alt="Daniela Flores">
+    </div>
+    <ul id="menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="about.html">Quién soy</a></li>
+      <li><a href="services.html">Servicios</a></li>
+      <li><a href="test.html">Testimonios</a></li>
+      <li><a href="contacts.html">Contacto</a></li>
+    </ul>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <section class="pricing-wrapper">
+    <!-- Main Pricing Table -->
+    <div class="pricing-table">
+      <table>
+        <colgroup>
+        <col style="width: 40%;">
+        <col style="width: 20%;">
+        <col style="width: 20%;">
+        <col style="width: 20%;">
+        </colgroup>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Sesión de 1 <br>hora</th>
+            <th>Sesión de 45 minutos</th>
+            <th>Sesión de 30 minutos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="plan-label">
+              Encuadre<br>
+              <span class="plan-description">
+               Primer sesión para conocer la forma de trabajo y el problema a tratar<br>
+              </span>
+              <span class="plan-description-small">
+                
+              </span>
+            </td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>$150</td>
+          </tr>
+          <tr>
+            <td class="plan-label">
+              Semanal Programada<br>
+              <span class="plan-description">
+                Mismo día de la semana en el mismo horario<br>
+              </span>
+              <span class="plan-description-small">
+                Debe agendarse con 2 días hábiles de anticipación
+              </span>
+            </td>
+            <td>$400</td>
+            <td>$300</td>
+            <td>$200</td>
+          </tr>
+          <tr>
+            <td class="plan-label">
+              Eventual Programada<br>
+              <span class="plan-description">
+                Diferente día y horario cada vez
+                <br>
+              </span>
+              <span class="plan-description-small">
+                Debe agendarse con 2 días hábiles de anticipación
+              </span>
+
+            </td>
+            <td>$420</td>
+            <td>$320</td>
+            <td>$220</td>
+          </tr>
+          <tr>
+            <td class="plan-label">
+              Preferente<br>
+              <span class="plan-description">
+                Para una urgencia sin previa cita anticipada<br>
+              </span>
+              <span class="plan-description-small">
+                Cita el mismo día o al día siguiente
+              </span>
+            </td>
+            <td>$450</td>
+            <td>$350</td>
+            <td>$250</td>
+          </tr>
+          <tr>
+            <td colspan="4"><p class="end-message">Para confirmar la cita, el pago debe hacerse mediante transferencia bancaria un día antes, 
+              o a más tardar el mismo día con 2 horas de anticipación de la hora de la sesión, 
+              esto con previo aviso del paciente sobre el pago el mismo día. 
+              Se debe enviar el comprobante de pago via WhatsApp. <br><br>
+
+              Si no se confirma el pago, la sesión no será agendada.</p></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>  
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-row">
+    <p class="left">Psitandan. Todos los derechos reservados. 2025.</p>
+    <p class="right">Página web desarrollada por K. Martin.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("active");
+    }
+  </script>
+</body>
+</html>

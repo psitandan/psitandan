@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Offside&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  <title>Quién Soy | Daniela Flores</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body{
+      font-family: 'Quicksand', sans-serif;
+      background-color: #fff;
+      color: #333;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Navbar */
+    nav {
+      min-height: 80px;
+      background-color: #424C55;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav .logo {
+  display: flex;
+  align-items: center;   /* aligns brain + name vertically */
+}
+
+    nav .logo img.brain { max-height: 5rem; width: auto; }
+    nav .logo img.name { max-height: 7rem; width: auto; }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav ul li a {
+      font-family: 'Smooch Sans';
+      padding: 0.6rem 1rem;
+      color: white;
+      text-decoration: none;
+      font-size: 1.5rem;
+      border-radius: 0.3rem;
+      transition: 0.3s;
+    }
+    nav ul li a:hover { background-color: white; color: black; }
+
+    .menu-toggle { display: none; flex-direction: column; cursor: pointer; }
+    .menu-toggle span {
+      height: 0.2rem; width: 1.6rem; background: #fff;
+      margin: 0.3rem 0; border-radius: 0.2rem;
+    }
+
+    /* Main layout */
+    main {
+      flex: 1;                     /* fill remaining space between nav & footer */
+      display: flex;
+      flex-direction: column;
+    }
+
+    .about {
+      text-align: center;
+      padding: 4rem 10%;
+    }
+
+    .about img {
+      max-width: 10rem;
+      height: 100%;
+      object-fit: cover;
+      margin-bottom: 1.5rem;
+    }
+
+    .about h2 {
+      font-family: 'Offside', cursive;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .about p {
+      margin: 1rem 0;
+      font-size: clamp(1rem, 1vw + 0.8rem, 1.5rem);
+    }
+
+    .highlight {
+      flex: 1;                     /* <-- expands to fill space */
+      text-align: center;
+      background-color:  #AABD8C;
+      color: #333;
+      padding: 2rem 10%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;     /* center text vertically */
+      font-size: clamp(1rem, 1vw + 0.8rem, 1.5rem);
+    }
+
+    .highlight p{
+      margin: auto;
+    }
+
+/* Footer */
+footer {
+  min-height: 80px;
+  margin-top: auto;
+  background-color: #424C55;
+  color: white;
+  font-family: 'Quicksand';
+  font-size: 0.9rem;
+
+  display: flex;
+  align-items: center;   /* vertically centers row */
+  padding: 0 1.5rem;     /* side padding */
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between; /* pushes text left/right */
+  align-items: center;
+  width: 100%; /* makes row span the full footer width */
+}
+
+footer .left,
+footer .right {
+  margin: 0;
+}
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #424C55;
+        position: absolute;
+        top: 100%; right: 0;
+        width: 60%;
+        padding: 1rem;
+      }
+      nav ul.active { display: flex; }
+      .menu-toggle { display: flex; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">
+      <img class="brain" src="Brain.png" alt="Logo">
+      <img class="name" src="Logo.png" alt="Daniela Flores">
+    </div>
+    <ul id="menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="about.html">Quién soy</a></li>
+      <li><a href="services.html">Servicios</a></li>
+      <li><a href="test.html">Testimonios</a></li>
+      <li><a href="contacts.html">Contacto</a></li>
+    </ul>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <main>
+    <div class="about">
+      <img src="Profile_2.jpg" alt="Daniela Flores">
+      <h2>Soy Daniela Flores</h2>
+      <p>Mi propósito es ofrecerte las herramientas necesarias para mejorar cualquier problema que desees trabajar en terapia</p>
+    </div>
+
+    <div class="highlight">
+      <p>Psicóloga egresada de la Universidad del Valle de México con una maestría en Tanatología en la Universidad Montrer y un diploma en Terapia Breve para problemas en la Adolescencia de ADIPA.</p>
+      <p>Quiero escucharte sin que te sientas juzgado, en un espacio sin prejuicios y con la libertad de que tus emociones son válidas.</p>
+      <p><strong>¿Quieres Iniciar Tu Proceso?</strong></p>
+      <p>Me manejo con respeto y compasión, orientándote siempre hacia cualquier meta que decidas alcanzar.</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-row">
+    <p class="left">Psitandan. Todos los derechos reservados. 2025.</p>
+    <p class="right">Página web desarrollada por K. Martin.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("active");
+    }
+  </script>
+
+</body>
+</html>

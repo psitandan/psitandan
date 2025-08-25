@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Offside&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Offside&family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="Therapy.jpg">
+  <title>Daniela Flores | Orientación Psicológica y Tanatológica</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #fff;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    nav {
+      min-height: 80px;
+      background-color: #424C55;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      display: flex;
+      align-items: center;
+      color: #fff;
+      position: relative;
+    }
+
+    /* Brain icon */
+    .logo img.brain {
+      max-height: 5rem;
+      width: auto;
+    }
+
+    /* Text logo */
+    .logo img.name {
+      max-height: 7rem;
+      width: auto;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav ul li {
+      list-style: none;
+    }
+
+    nav ul li a {
+      font-family: 'Smooch Sans';
+      display: block;
+      padding: 0.6rem 1rem;
+      color: white;
+      text-decoration: none;
+      font-size: 1.5rem;
+      transition: background-color 0.3s, color 0.3s;
+      border-radius: 0.3rem;
+    }
+
+    nav ul li a:hover {
+      background-color: white;
+      color: black;
+    }
+
+    /* Mobile Menu Toggle */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 0.2rem;
+      width: 1.6rem;
+      background: #fff;
+      margin: 0.3rem 0;
+      border-radius: 0.2rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: #C296A2;
+      color: #f4e7e9;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 5vh 5%;
+    }
+
+    .hero h2 {
+      font-family: 'Offside';
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-family: 'Quicksand';
+      max-width: 40rem;
+      margin: auto;
+      font-size: 1.5rem;
+    }
+
+    /* Content Section */
+    .content {
+  display: flex;
+  flex-wrap: wrap;        /* allows responsiveness */
+  align-items: stretch;   /* equal height children */
+  margin-bottom: 0;       /* remove extra space */
+    }
+
+    .content .half {
+  flex: 1 1 50%;          /* each half takes 50% width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+    }
+
+    .content .half img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.content .half.text {
+  padding: 2rem;
+  justify-content: center; /* optional: centers the text vertically */
+}
+
+    .content .text {
+  flex: 1 1 50%;
+  padding: 2rem;
+  font-family: 'Quicksand';
+  font-size: clamp(1rem, 1vw + 1rem, 1.5rem);
+  line-height: 1.8;
+    }
+
+    .content .text ul {
+      margin-top: 1rem;
+      padding-left: 1.2rem;
+    }
+
+    .content .text ul li {
+      margin-bottom: 0.8rem;
+    }
+
+.pinkbottom {
+  width: 100%;
+  background-color: #C296A2;
+  flex: 1 0 auto;
+}
+
+/* Footer */
+footer {
+  min-height: 80px;
+  margin-top: auto;
+  background-color: #424C55;
+  color: white;
+  font-family: 'Quicksand';
+  font-size: 0.9rem;
+
+  display: flex;
+  align-items: center;   /* vertically centers row */
+  padding: 0 1.5rem;     /* side padding */
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between; /* pushes text left/right */
+  align-items: center;
+  width: 100%; /* makes row span the full footer width */
+}
+
+footer .left,
+footer .right {
+  margin: 0;
+}
+
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #3a434b;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 60%;
+    padding: 1rem;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* Content section stacked on mobile */
+  .content {
+    flex-direction: column;  /* stack image above text */
+  }
+
+  .content .half,
+  .content .text {
+    flex: 1 1 100%;  /* each takes full width */
+  }
+
+  .content .half {
+    order: -1;       /* move image above text */
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">
+      <img class="brain" src="Brain.png" alt="Logo">
+      <img class="name" src="Logo.png" alt="Daniela Flores">
+    </div>
+    <ul id="menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="about.html">Quién soy</a></li>
+      <li><a href="services.html">Servicios</a></li>
+      <li><a href="test.html">Testimonios</a></li>
+      <li><a href="contacts.html">Contacto</a></li>
+    </ul>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div>
+      <h2>Dolor. Duelo. Diálogo.</h2>
+      <p>Quiero crear un espacio seguro para ti donde puedas conocerte mejor y logres cumplir tus objetivos</p>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="content">
+    <div class="half" ><img src="Therapy-small.jpg" alt=""></div>
+    <div class="text">
+      <p>Como psicóloga y tanatóloga, puedo ayudarte no sólo si has experimentado la muerte de un ser amado y estás viviendo tu duelo. Otras pérdidas significativas pueden ser...</p>
+      <ul>
+        <li>La pérdida de cosas u objetos que eran importantes para ti</li>
+        <li>Los cambios que suceden con el pasar de tu edad (adolescencia, vejez, etc.)</li>
+        <li>Si tus capacidades físicas o mentales ahora son diferentes</li>
+        <li>Si has pasado por una ruptura de pareja, amistades o familia</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="pinkbottom">
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-row">
+    <p class="left">Psitandan. Todos los derechos reservados. 2025.</p>
+    <p class="right">Página web desarrollada por K. Martin.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("active");
+    }
+  </script>
+
+</body>
+</html>

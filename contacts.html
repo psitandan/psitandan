@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Offside&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  <title>Plantilla | Daniela Flores</title>
+
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #fff;
+      color: #333;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Navbar */
+    nav {
+      min-height: 80px;
+      background-color: #424C55;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    nav .logo img.brain { max-height: 5rem; width: auto; }
+    nav .logo img.name { max-height: 7rem; width: auto; }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav ul li a {
+      font-family: 'Smooch Sans', sans-serif;
+      padding: 0.6rem 1rem;
+      color: white;
+      text-decoration: none;
+      font-size: 1.5rem;
+      border-radius: 0.3rem;
+      transition: 0.3s;
+    }
+    nav ul li a:hover { background-color: white; color: black; }
+
+    .menu-toggle { display: none; flex-direction: column; cursor: pointer; }
+    .menu-toggle span {
+      height: 0.2rem; width: 1.6rem; background: #fff;
+      margin: 0.3rem 0; border-radius: 0.2rem;
+    }
+
+    /* Contact section */
+    main {
+      flex: 1;
+      background-color: #B88B94; /* soft rose color from your screenshot */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1rem;
+      text-align: center;
+      margin-top: 5vh;
+      margin-bottom: 5vh;
+    }
+
+    main h2 {
+      font-family: 'Offside', cursive;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-text {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-icons, .social-icons {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      align-items: center;
+      margin: 1.5rem 0;
+    }
+
+    .contact-icons a, .social-icons a {
+      color: #424C55;
+      font-size: 2.2rem;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+
+    .contact-icons a:hover, .social-icons a:hover {
+      transform: scale(1.2);
+    }
+
+    .social-icons a img {
+  height: 7vh;
+  object-fit: contain;  /* keeps the image from stretching */
+  vertical-align: middle; /* aligns it nicely with icons */
+}
+
+    .contact-icons a img{
+  height: 7vh;
+  object-fit: contain;  /* keeps the image from stretching */
+  vertical-align: middle; /* aligns it nicely with icons */
+    }
+
+
+/* Footer */
+footer {
+  min-height: 80px;
+  margin-top: auto;
+  background-color: #424C55;
+  color: white;
+  font-family: 'Quicksand';
+  font-size: 0.9rem;
+
+  display: flex;
+  align-items: center;   /* vertically centers row */
+  padding: 0 1.5rem;     /* side padding */
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between; /* pushes text left/right */
+  align-items: center;
+  width: 100%; /* makes row span the full footer width */
+}
+
+footer .left,
+footer .right {
+  margin: 0;
+}
+
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #424C55;
+        position: absolute;
+        top: 100%; right: 0;
+        width: 60%;
+        padding: 1rem;
+      }
+      nav ul.active { display: flex; }
+      .menu-toggle { display: flex; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">
+      <img class="brain" src="Brain.png" alt="Logo">
+      <img class="name" src="Logo.png" alt="Daniela Flores">
+    </div>
+    <ul id="menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="about.html">Quién soy</a></li>
+      <li><a href="services.html">Servicios</a></li>
+      <li><a href="test.html">Testimonios</a></li>
+      <li><a href="contacts.html">Contacto</a></li>
+    </ul>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- Main (Page-specific content goes here) -->
+  <main>
+    <h2>¿Quieres agendar tu cita?</h2>
+    <p class="contact-text">Contáctame por el medio de tu preferencia</p>
+
+    <div class="contact-icons">
+      <a href="https://wa.me/message/OKPHGXB4QVWGE1?src=qr" target="_blank"><img src="Whatsapp.png" alt=""></a>
+      <a href="mailto:psitandan@gmail.com"><img src="Email.png" alt=""></a>
+    </div>
+
+    <p class="contact-text">O encuéntrame aquí</p>
+
+    <div class="social-icons">
+      <a href="http://facebook.com/psitandan"><img src="Facebook.png" alt=""></a>
+      <a href="http://instagram.com/psitandan"><img src="Instagram.png" alt=""></a>
+      <a href="http://www.youtube.com/@psitandan"><img src="YT.png" alt=""></a>
+      <a href="http://tiktok.com/@psitandan"><img src="TikTok.png" alt=""></a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-row">
+    <p class="left">Psitandan. Todos los derechos reservados. 2025.</p>
+    <p class="right">Página web desarrollada por K. Martin.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("active");
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Offside&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Offside&family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  <title>Daniela Flores | Orientación Psicológica y Tanatológica</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      overflow-x: hidden;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #fff;
+      color: #333;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Navbar */
+    nav {
+      min-height: 80px;
+      background-color: #424C55;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      display: flex;
+      align-items: center;
+      color: #fff;
+      position: relative;
+    }
+
+    /* Brain icon */
+    .logo img.brain {
+      max-height: 5rem;
+      width: auto;
+    }
+
+    /* Text logo */
+    .logo img.name {
+      max-height: 7rem;
+      width: auto;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav ul li a {
+      font-family: 'Smooch Sans';
+      display: block;
+      padding: 0.6rem 1rem;
+      color: white;
+      text-decoration: none;
+      font-size: 1.5rem;
+      transition: background-color 0.3s, color 0.3s;
+      border-radius: 0.3rem;
+    }
+
+    nav ul li a:hover {
+      background-color: white;
+      color: black;
+    }
+
+    /* Mobile Menu Toggle */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 0.2rem;
+      width: 1.6rem;
+      background: #fff;
+      margin: 0.3rem 0;
+      border-radius: 0.2rem;
+    }
+
+.boxes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(20vmin, 30vmin));
+  gap: 1rem;        /* spacing between squares */
+  justify-content: center;
+  margin: auto;
+}
+
+
+.boxes div {
+  aspect-ratio: 1 / 1;
+  width: 100%;        /* fills its grid cell */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+
+    .box{
+      background-color: #AA1155;
+    }
+
+    .boxpink{
+      background-color: #AA1155;
+    }
+
+    .text-top-bottom{
+      font-family: 'Quicksand', sans-serif;
+      text-align: center;
+      font-size: clamp(1rem, 1vw + 0.8rem, 1.5rem);
+      margin: auto;
+      display: flex;              /* enable flexbox */
+      justify-content: center;    /* center horizontally */
+      align-items: center;        /* center vertically */
+      padding: 1rem 0;            /* equal white space top & bottom */
+    }
+
+/* Footer */
+footer {
+  min-height: 80px;
+  margin-top: auto;
+  background-color: #424C55;
+  color: white;
+  font-family: 'Quicksand';
+  font-size: 0.9rem;
+
+  display: flex;
+  align-items: center;   /* vertically centers row */
+  padding: 0 1.5rem;     /* side padding */
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between; /* pushes text left/right */
+  align-items: center;
+  width: 100%; /* makes row span the full footer width */
+}
+
+footer .left,
+footer .right {
+  margin: 0;
+}
+
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #3a434b;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 60%;
+        padding: 1rem;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .boxes {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(20vmin, 50vmin));
+        gap: 1rem;        /* spacing between squares */
+        justify-content: center;
+        margin: auto;
+              }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">
+      <img class="brain" src="Brain.png" alt="Logo">
+      <img class="name" src="Logo.png" alt="Daniela Flores">
+    </div>
+    <ul id="menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="about.html">Quién soy</a></li>
+      <li><a href="services.html">Servicios</a></li>
+      <li><a href="test.html">Testimonios</a></li>
+      <li><a href="contacts.html">Contacto</a></li>
+    </ul>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <div class="text-top-bottom">
+    Algunas de las voces de quienes se han beneficiado de mi acompañamiento terapéutico
+  </div>
+
+  <div class="boxes">
+    <div class="boxpink"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+
+  <div class="text-top-bottom">
+    Cada recorrido es distinto ¿Cómo quieres que sea el tuyo?
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-row">
+    <p class="left">Psitandan. Todos los derechos reservados. 2025.</p>
+    <p class="right">Página web desarrollada por K. Martin.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("active");
+    }
+  </script>
+
+</body>
+</html>
