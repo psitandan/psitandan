@@ -19,7 +19,6 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      overflow-x: hidden;
     }
 
     body {
@@ -31,11 +30,12 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      overflow-x: hidden;
     }
 
     /* Navbar */
     nav {
-      min-height: 80px;
+      min-height: 5rem;
       background-color: #424C55;
       display: flex;
       justify-content: space-between;
@@ -169,6 +169,29 @@ footer .right {
 }
 
 
+    /* Responsive */
+    @media (max-width: 48rem) { /* 768px */
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #3a434b;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 60%;
+        padding: 1rem;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+
      @media (max-width: 768px) {
 
             .boxes {
@@ -182,28 +205,7 @@ footer .right {
      }
 
 
-@media (max-width: 768px) {
-  nav ul {
-    display: none;
-    flex-direction: column;
-    background-color: #3a434b;
-    position: fixed;   /* fixed so it overlays content */
-    top: 80px;         /* just below navbar */
-    right: 0;
-    width: 60%;
-    padding: 1rem;
-    z-index: 2000;     /* on top of everything */
-    border-radius: 0 0 0.5rem 0.5rem; /* optional, nicer look */
-  }
 
-  nav ul.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
-}
 
 
   </style>
